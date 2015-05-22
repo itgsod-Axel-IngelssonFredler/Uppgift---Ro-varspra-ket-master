@@ -1,18 +1,18 @@
-def rovarizer(mening:)
+def rovarize(cleartext:)
+  string=""
   i=0
   konsonant_lista = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Z"]
-  mening_lista=mening.split("")
+  mening_lista=cleartext.split("")
   mening_lista.each do |bokstav|
     if konsonant_lista.include?(bokstav.capitalize)
-      p "hej"
       mening_lista[i] = bokstav + "o" + bokstav
-      p mening_lista
+      string += mening_lista[i]
+    else
+      string += mening_lista[i]
     end
     i+=1
-    p i
-
-    end
-
+  end
+  return string
 end
 
-rovarizer(mening:"Babis")
+rovarize(cleartext:"Bäbis är dum")
